@@ -5,6 +5,9 @@ const withPWA = withPWAInit({
   dest: 'public',
 });
 
-export default withPWA({
+const nextConfig = {
   reactStrictMode: true,
-});
+  // 기타 Next.js 설정
+};
+
+export default withPWA(nextConfig);
