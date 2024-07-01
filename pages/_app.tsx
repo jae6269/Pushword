@@ -11,7 +11,6 @@ export default function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Set personal Keyword push notifications"
         />
-        <meta name="theme-color" content="#ffffff" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <Component {...pageProps} />
