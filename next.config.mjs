@@ -3,6 +3,8 @@ import withPWAInit from '@ducanh2912/next-pwa';
 
 const withPWA = withPWAInit({
   dest: 'public',
+  register: false,
+  sw: 'sw.js',
 });
 
 const nextConfig = {
