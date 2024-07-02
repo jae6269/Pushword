@@ -1,11 +1,13 @@
 {
-  "theme_color": "#f69435",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "pushword",
-  "short_name": "pushword",
+  "name": "PushWord",
+  "short_name": "PushWord",
+  "orientation": "portrait",
+
   "icons": [
     {
       "src": "/images/icons/icon-192x192.png",
