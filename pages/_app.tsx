@@ -12,12 +12,24 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Set notifications with your own keywords"
         />
         <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ffffff" />
 
         {/* favicon */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
 
-        {/* apple icons */}
+        {/* for ios */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="PushWord" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <link
+          rel="apple-touch-startup-image"
+          href="/icon-512x512.png"
+          media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+        ></link>
         <link
           rel="apple-touch-icon"
           href="/images/icons/apple/apple-icon.png"
