@@ -12,3 +12,26 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  channels Channal[]
+}
+
+model Channal {
+  id Int @id @default(autoincrement())
+  userId Int
+  channelId String @unique
+  channelName String
+  user User @relation(fields: [userId],references: [id])
+ keywords Keyword[]
+}
+
+model Keyword{
+  id Int @id @default(autoincrement())
+  channelId Int
+  keyword String
+  channel Channal @relation(fields: [channelId], references: [id])
+}
