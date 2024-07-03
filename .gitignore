@@ -39,5 +39,6 @@ next-env.d.ts
 public/sw.js
 public/sw.js.*
 public/workbox-*.js
+public/workbox-development.js
 public/workbox-*.js.*
 worker/index.js

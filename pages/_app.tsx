@@ -9,9 +9,59 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>PushWord</title>
         <meta
           name="description"
-          content="Set personal Keyword push notifications"
+          content="Set notifications with your own keywords"
         />
         <link rel="manifest" href="/manifest.json" />
+
+        {/* favicon */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        {/* apple icons */}
+        <link
+          rel="apple-touch-icon"
+          href="/images/icons/apple/apple-icon.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="57x57"
+          href="/images/icons/apple/apple-icon-57x57.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="60x60"
+          href="/images/icons/apple/apple-icon-60x60.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/images/icons/apple/apple-icon-72x72.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/images/icons/apple/apple-icon-114x114.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="120x120"
+          href="/images/icons/apple/apple-icon-120x120.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/images/icons/apple/apple-icon-144x144.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/images/icons/apple/apple-icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/icons/apple/apple-icon-180x180.png"
+        />
       </Head>
       <Component {...pageProps} />
     </>
