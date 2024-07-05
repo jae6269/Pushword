@@ -8,8 +8,8 @@ export default function Home() {
   };
   return (
     <div>
-      <button type="button" onClick={() => testClick}>
-        가져오기ㅇㅇㅇㄴ
+      <button type="button" onClick={testClick}>
+        가져오기
       </button>
     </div>
   );
