@@ -1,10 +1,11 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 import '@/styles/reset.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <AppCacheProvider>
       <Head>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>PushWord</title>
@@ -77,6 +78,6 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </AppCacheProvider>
   );
 }
