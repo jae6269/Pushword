@@ -1,7 +1,20 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
-import '@/styles/reset.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const theme = createTheme({
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+  },
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -77,7 +90,9 @@ export default function App({ Component, pageProps }: AppProps) {
           href="/images/icons/apple/apple-icon-180x180.png"
         />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </AppCacheProvider>
   );
 }
