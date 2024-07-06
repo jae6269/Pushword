@@ -3,20 +3,10 @@ import Head from 'next/head';
 import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
-import {
-  AppBar,
-  BottomNavigation,
-  BottomNavigationAction,
-} from '@mui/material';
-import {
-  HomeOutlined,
-  MenuBookOutlined,
-  SearchOutlined,
-  SubscriptionsOutlined,
-  AccountCircleOutlined,
-} from '@mui/icons-material';
+
 import '@/styles/globals.css';
 import useGetUser from '@/hooks/useGetUser';
+import BottomNavBar from '@/components/BottomNavBar';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -108,24 +98,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <div className="wrapper">
           <Component {...pageProps} user={user} />
-          <BottomNavigation showLabels>
-            <BottomNavigationAction label="home" icon={<HomeOutlined />} />
-            <BottomNavigationAction
-              label="channel"
-              icon={<SubscriptionsOutlined />}
-            />
-            <BottomNavigationAction label="search" icon={<SearchOutlined />} />
-            <BottomNavigationAction
-              label="manual"
-              icon={<MenuBookOutlined />}
-            />
-            {user && (
-              <BottomNavigationAction
-                label="information"
-                icon={<AccountCircleOutlined />}
-              />
-            )}
-          </BottomNavigation>
+          <BottomNavBar user={user} />
         </div>
       </ThemeProvider>
     </AppCacheProvider>
