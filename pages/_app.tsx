@@ -4,6 +4,8 @@ import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
 
+import '@/styles/globals.css';
+
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
@@ -91,7 +93,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <div className="wrapper">
+          <Component {...pageProps} />
+        </div>
       </ThemeProvider>
     </AppCacheProvider>
   );
