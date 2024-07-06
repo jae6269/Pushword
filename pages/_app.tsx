@@ -98,7 +98,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <div className="wrapper">
           <Component {...pageProps} user={user} />
-          <BottomNavBar user={user} />
+          <BottomNavBar />
         </div>
       </ThemeProvider>
     </AppCacheProvider>

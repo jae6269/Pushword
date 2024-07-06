@@ -12,12 +12,9 @@ import {
 } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 
-interface BottomNavBarProps {
-  user: User | null;
-}
 type URLKeyType = keyof typeof URL_LIST;
 
-export default function BottomNavBar({ user }: BottomNavBarProps) {
+export default function BottomNavBar() {
   const [menu, setMenu] = useState<URLKeyType>('home');
   const router = useRouter();
 
@@ -52,13 +49,12 @@ export default function BottomNavBar({ user }: BottomNavBarProps) {
         value="manual"
         icon={<MenuBookOutlined />}
       />
-      {user && (
-        <BottomNavigationAction
-          label="information"
-          value="information"
-          icon={<AccountCircleOutlined />}
-        />
-      )}
+
+      <BottomNavigationAction
+        label="information"
+        value="information"
+        icon={<AccountCircleOutlined />}
+      />
     </BottomNavigation>
   );
 }
