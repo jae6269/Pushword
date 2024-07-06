@@ -4,6 +4,10 @@ import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
 
+import '@/styles/globals.css';
+import useGetUser from '@/hooks/useGetUser';
+import BottomNavBar from '@/components/BottomNavBar';
+
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
@@ -17,6 +21,7 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const user = useGetUser();
   return (
     <AppCacheProvider>
       <Head>
@@ -91,7 +96,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <div className="wrapper">
+          <Component {...pageProps} user={user} />
+          <BottomNavBar />
+        </div>
       </ThemeProvider>
     </AppCacheProvider>
   );
