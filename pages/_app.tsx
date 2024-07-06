@@ -8,9 +8,8 @@ import {
   BottomNavigation,
   BottomNavigationAction,
 } from '@mui/material';
-import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
-import SearchIcon from '@mui/icons-material/Search';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
+
+import { Home, MenuBook, Search, Subscriptions } from '@mui/icons-material';
 import '@/styles/globals.css';
 
 const roboto = Roboto({
@@ -104,12 +103,10 @@ export default function App({ Component, pageProps }: AppProps) {
           <AppBar />
           <Component {...pageProps} />
           <BottomNavigation showLabels>
-            <BottomNavigationAction
-              label="channel"
-              icon={<SubscriptionsIcon />}
-            />
-            <BottomNavigationAction label="search" icon={<SearchIcon />} />
-            <BottomNavigationAction label="manual" icon={<MenuBookIcon />} />
+            <BottomNavigationAction label="home" icon={<Home />} />
+            <BottomNavigationAction label="channel" icon={<Subscriptions />} />
+            <BottomNavigationAction label="search" icon={<Search />} />
+            <BottomNavigationAction label="manual" icon={<MenuBook />} />
           </BottomNavigation>
         </div>
       </ThemeProvider>
