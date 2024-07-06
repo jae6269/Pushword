@@ -3,7 +3,14 @@ import Head from 'next/head';
 import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
-
+import {
+  AppBar,
+  BottomNavigation,
+  BottomNavigationAction,
+} from '@mui/material';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import SearchIcon from '@mui/icons-material/Search';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import '@/styles/globals.css';
 
 const roboto = Roboto({
@@ -94,7 +101,16 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <div className="wrapper">
+          <AppBar />
           <Component {...pageProps} />
+          <BottomNavigation showLabels>
+            <BottomNavigationAction
+              label="channel"
+              icon={<SubscriptionsIcon />}
+            />
+            <BottomNavigationAction label="search" icon={<SearchIcon />} />
+            <BottomNavigationAction label="manual" icon={<MenuBookIcon />} />
+          </BottomNavigation>
         </div>
       </ThemeProvider>
     </AppCacheProvider>
