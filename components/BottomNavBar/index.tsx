@@ -31,16 +31,31 @@ export default function BottomNavBar({ user }: BottomNavBarProps) {
 
   return (
     <BottomNavigation showLabels value={menu} onChange={handleMenuChange}>
-      <BottomNavigationAction label="home" icon={<HomeOutlined />} />
+      <BottomNavigationAction
+        label="home"
+        value="home"
+        defaultChecked
+        icon={<HomeOutlined />}
+      />
       <BottomNavigationAction
         label="channel"
+        value="channel"
         icon={<SubscriptionsOutlined />}
       />
-      <BottomNavigationAction label="search" icon={<SearchOutlined />} />
-      <BottomNavigationAction label="manual" icon={<MenuBookOutlined />} />
+      <BottomNavigationAction
+        label="search"
+        value="search"
+        icon={<SearchOutlined />}
+      />
+      <BottomNavigationAction
+        label="manual"
+        value="manual"
+        icon={<MenuBookOutlined />}
+      />
       {user && (
         <BottomNavigationAction
           label="information"
+          value="information"
           icon={<AccountCircleOutlined />}
         />
       )}
