@@ -1,5 +1,5 @@
 import { fireAuth, fireStore, provider } from '@/firebase/firebase';
-import { signInWithPopup } from 'firebase/auth';
+import { signInWithPopup, User } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { Avatar } from '@mui/material';
 
@@ -37,4 +37,13 @@ function Profile({ photoURL }: ProfileProps) {
   return <Avatar alt="프로필이미지" src={photoURL} />;
 }
 
-export default function Sign() {}
+interface SignProps {
+  user: User | null;
+}
+export default function Sign({ user }: SignProps) {
+  if (user && user.photoURL) {
+    return <Profile photoURL={user.photoURL} />;
+  } else {
+    return <SignIn />;
+  }
+}

@@ -8,9 +8,12 @@ import {
   BottomNavigation,
   BottomNavigationAction,
 } from '@mui/material';
-
 import { Home, MenuBook, Search, Subscriptions } from '@mui/icons-material';
 import '@/styles/globals.css';
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged, User } from 'firebase/auth';
+import { fireAuth } from '@/firebase/firebase';
+import Sign from '@/components/Sign';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -25,6 +28,20 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(fireAuth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <AppCacheProvider>
       <Head>
@@ -100,8 +117,10 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <div className="wrapper">
-          <AppBar />
-          <Component {...pageProps} />
+          <AppBar>
+            <Sign user={user} />
+          </AppBar>
+          <Component {...pageProps} user={user} />
           <BottomNavigation showLabels>
             <BottomNavigationAction label="home" icon={<Home />} />
             <BottomNavigationAction label="channel" icon={<Subscriptions />} />
