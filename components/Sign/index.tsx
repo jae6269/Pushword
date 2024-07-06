@@ -3,7 +3,7 @@ import { signInWithPopup, User } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { Avatar } from '@mui/material';
 
-function SignIn() {
+export function SignIn() {
   const handleLogin = async () => {
     try {
       const data = await signInWithPopup(fireAuth, provider);
@@ -33,7 +33,7 @@ function SignIn() {
 interface ProfileProps {
   photoURL: string;
 }
-function Profile({ photoURL }: ProfileProps) {
+export function Profile({ photoURL }: ProfileProps) {
   return <Avatar alt="프로필이미지" src={photoURL} />;
 }
 
