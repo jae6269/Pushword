@@ -16,9 +16,7 @@ import {
   AccountCircleOutlined,
 } from '@mui/icons-material';
 import '@/styles/globals.css';
-import { useEffect, useState } from 'react';
-import { onAuthStateChanged, User } from 'firebase/auth';
-import { fireAuth } from '@/firebase/firebase';
+import useGetUser from '@/hooks/useGetUser';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -33,20 +31,7 @@ const theme = createTheme({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [user, setUser] = useState<User | null>(null);
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(fireAuth, (user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
-
+  const user = useGetUser();
   return (
     <AppCacheProvider>
       <Head>
