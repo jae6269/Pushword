@@ -1,7 +1,6 @@
 import { URL_LIST } from '@/constants/url';
 import { useState } from 'react';
 
-import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import {
   HomeOutlined,
   MenuBookOutlined,
@@ -25,35 +24,5 @@ export default function BottomNavBar() {
     router.push(URL_LIST[newValue]);
   };
 
-  return (
-    <BottomNavigation showLabels value={menu} onChange={handleMenuChange}>
-      <BottomNavigationAction
-        label="홈"
-        value="home"
-        defaultChecked
-        icon={<HomeOutlined />}
-      />
-      <BottomNavigationAction
-        label="채널"
-        value="channel"
-        icon={<SubscriptionsOutlined />}
-      />
-      <BottomNavigationAction
-        label="검색"
-        value="search"
-        icon={<SearchOutlined />}
-      />
-      <BottomNavigationAction
-        label="메뉴얼"
-        value="manual"
-        icon={<MenuBookOutlined />}
-      />
-
-      <BottomNavigationAction
-        label="계정"
-        value="account"
-        icon={<AccountCircleOutlined />}
-      />
-    </BottomNavigation>
-  );
+  return <div>바텀 네비게이션</div>;
 }
