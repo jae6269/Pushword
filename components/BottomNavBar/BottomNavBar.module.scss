@@ -1,17 +1,31 @@
 .container {
   width: 100%;
-  height: 3.75rem;
-  @include flex-row-center;
+  height: 3.125rem;
+  display: flex;
+  justify-content: space-around;
 
   .menu {
-    width: 100%;
+    width: calc(100% / 5 - 20px);
+    border-radius: .375rem;
     @include flex-col-center;
+    gap: .25rem;
     cursor: pointer;
-
-    .icon {}
 
     .tag {
       @include caption1-medium;
+    }
+
+    &.selected {
+      background-color: $yellow500;
+      color: $white;
+
+      .tag {
+        @include caption1-medium($white);
+      }
+    }
+
+    &:active {
+      background-color: $yellow300;
     }
   }
 }

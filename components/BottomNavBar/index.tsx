@@ -27,23 +27,38 @@ export default function BottomNavBar() {
 
   return (
     <footer className={cn('container')}>
-      <div className={cn('menu')} onClick={() => handleMenuChange('home')}>
+      <div
+        className={cn('menu', { selected: menu === 'home' })}
+        onClick={() => handleMenuChange('home')}
+      >
         <HomeIcon />
         <p className={cn('tag')}>홈</p>
       </div>
-      <div className={cn('menu')} onClick={() => handleMenuChange('channel')}>
+      <div
+        className={cn('menu', { selected: menu === 'channel' })}
+        onClick={() => handleMenuChange('channel')}
+      >
         <ChannelIcon />
         <p className={cn('tag')}>채널</p>
       </div>
-      <div className={cn('menu')} onClick={() => handleMenuChange('search')}>
+      <div
+        className={cn('menu', { selected: menu === 'search' })}
+        onClick={() => handleMenuChange('search')}
+      >
         <SearchIcon />
         <p className={cn('tag')}>검색</p>
       </div>
-      <div className={cn('menu')} onClick={() => handleMenuChange('manual')}>
+      <div
+        className={cn('menu', { selected: menu === 'manual' })}
+        onClick={() => handleMenuChange('manual')}
+      >
         <ManualIcon />
         <p className={cn('tag')}>메뉴얼</p>
       </div>
-      <div className={cn('menu')} onClick={() => handleMenuChange('account')}>
+      <div
+        className={cn('menu', { selected: menu === 'account' })}
+        onClick={() => handleMenuChange('account')}
+      >
         <AccountIcon />
         <p className={cn('tag')}>계정</p>
       </div>
