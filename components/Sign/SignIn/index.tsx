@@ -9,9 +9,12 @@ const cn = classNames.bind(styles);
 export default function SignIn() {
   return (
     <div className={cn('container')}>
-      <h1>로그인이 필요합니다.</h1>
       <Image src={MainLogo} alt="메인 로고" width={400} />
-      <SignInButton />
+
+      <div className={cn('sign')}>
+        <h1 className={cn('title')}>로그인이 필요한 서비스입니다.</h1>
+        <SignInButton />
+      </div>
     </div>
   );
 }

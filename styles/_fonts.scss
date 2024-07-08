@@ -60,6 +60,16 @@
   letter-spacing: -0.0437rem;
 }
 
+@mixin heading2-bold($color: black) {
+  color: $color;
+  /* Heading 2/Medium */
+  font-size: 1.75rem; //28
+  font-weight: 700;
+  line-height: 135.8%;
+  /* 38.024px */
+  letter-spacing: -0.0437rem;
+}
+
 @mixin headline2-bold($color: black) {
   color: $color;
   /* Headline 2/Bold */

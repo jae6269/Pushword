@@ -1,3 +1,18 @@
 .container {
   @include container-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6.25rem 0;
+  gap: 3.125rem;
+
+  .sign {
+    @include flex-col-center;
+    gap: 1.25rem;
+
+    .title {
+      @include heading2-bold($logo-yellow3);
+    }
+  }
+
 }
