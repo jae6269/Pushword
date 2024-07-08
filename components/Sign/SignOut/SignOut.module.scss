@@ -1,3 +1,5 @@
 .container {
   @include container-size;
+  @include flex-col-center;
+
 }
