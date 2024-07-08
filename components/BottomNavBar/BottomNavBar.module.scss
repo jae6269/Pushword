@@ -3,12 +3,14 @@
   height: 3.125rem;
   display: flex;
   justify-content: space-around;
+  border-top: 1px solid $logo-yellow1;
 
   .menu {
     width: calc(100% / 5 - 20px);
     border-radius: .375rem;
     @include flex-col-center;
     gap: .25rem;
+    margin-top: .3125rem;
     cursor: pointer;
 
     .tag {
@@ -16,7 +18,7 @@
     }
 
     &.selected {
-      background-color: $yellow500;
+      background-color: $logo-yellow1;
       color: $white;
 
       .tag {
