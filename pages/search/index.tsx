@@ -1,3 +1,3 @@
 export default function Search() {
-  return <div> 검색</div>;
+  return <div className="container"> 검색</div>;
 }
