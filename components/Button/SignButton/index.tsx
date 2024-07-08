@@ -5,6 +5,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import styles from './SignButton.module.scss';
 import classNames from 'classnames/bind';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 const cn = classNames.bind(styles);
 
 export function SignInButton() {
@@ -32,7 +33,13 @@ export function SignInButton() {
   };
   return (
     <button className={cn('sign-in')} type="button" onClick={handleLogin}>
-      로그인
+      <Image
+        src="/icons/google-logo.svg"
+        alt="구글로그인"
+        width={30}
+        height={30}
+      />
+      <p>구글계정으로 시작하기</p>
     </button>
   );
 }
