@@ -1,11 +1,11 @@
-import Sign from '@/components/Sign';
 import useGetUser from '@/hooks/useGetUser';
+
+import classNames from 'classnames/bind';
+import styles from './SignPage.module.scss';
+
+const cn = classNames.bind(styles);
 
 export default function SignPage() {
   const user = useGetUser();
-  return (
-    <div className="container">
-      <Sign user={user} />
-    </div>
-  );
+  return <div className={cn('container')}></div>;
 }
