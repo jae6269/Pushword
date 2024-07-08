@@ -3,6 +3,6 @@ export const URL_LIST = {
   channel: '/channels',
   search: '/search',
   manual: '/manual',
-  information: '/sign',
+  account: '/sign',
   notifications: '/notifications',
 };

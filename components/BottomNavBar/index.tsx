@@ -1,4 +1,3 @@
-import { User } from 'firebase/auth';
 import { URL_LIST } from '@/constants/url';
 import { useState } from 'react';
 
@@ -29,30 +28,30 @@ export default function BottomNavBar() {
   return (
     <BottomNavigation showLabels value={menu} onChange={handleMenuChange}>
       <BottomNavigationAction
-        label="home"
+        label="홈"
         value="home"
         defaultChecked
         icon={<HomeOutlined />}
       />
       <BottomNavigationAction
-        label="channel"
+        label="채널"
         value="channel"
         icon={<SubscriptionsOutlined />}
       />
       <BottomNavigationAction
-        label="search"
+        label="검색"
         value="search"
         icon={<SearchOutlined />}
       />
       <BottomNavigationAction
-        label="manual"
+        label="메뉴얼"
         value="manual"
         icon={<MenuBookOutlined />}
       />
 
       <BottomNavigationAction
-        label="information"
-        value="information"
+        label="계정"
+        value="account"
         icon={<AccountCircleOutlined />}
       />
     </BottomNavigation>

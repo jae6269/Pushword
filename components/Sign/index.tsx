@@ -1,7 +1,7 @@
 import { fireAuth, fireStore, provider } from '@/firebase/firebase';
 import { signInWithPopup, User } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { Avatar } from '@mui/material';
+import Profile from '../Profile';
 
 export function SignIn() {
   const handleLogin = async () => {
@@ -30,19 +30,12 @@ export function SignIn() {
   );
 }
 
-interface ProfileProps {
-  photoURL: string;
-}
-export function Profile({ photoURL }: ProfileProps) {
-  return <Avatar alt="프로필이미지" src={photoURL} />;
-}
-
 interface SignProps {
   user: User | null;
 }
 export default function Sign({ user }: SignProps) {
-  if (user && user.photoURL) {
-    return <Profile photoURL={user.photoURL} />;
+  if (user && user.photoURL && user.displayName) {
+    return <Profile name={user.displayName} photoURL={user.photoURL} />;
   } else {
     return <SignIn />;
   }

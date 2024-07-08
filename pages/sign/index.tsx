@@ -1,3 +1,12 @@
+import Sign from '@/components/Sign';
+import useGetUser from '@/hooks/useGetUser';
+import styles from './SignPage.module.css';
+
 export default function SignPage() {
-  return <div>로그인 페이지</div>;
+  const user = useGetUser();
+  return (
+    <main className={styles.container}>
+      <Sign user={user} />
+    </main>
+  );
 }
