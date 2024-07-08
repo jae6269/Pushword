@@ -1,13 +1,6 @@
 import { URL_LIST } from '@/constants/url';
 import { useState } from 'react';
 
-import {
-  HomeOutlined,
-  MenuBookOutlined,
-  SearchOutlined,
-  SubscriptionsOutlined,
-  AccountCircleOutlined,
-} from '@mui/icons-material';
 import { useRouter } from 'next/router';
 
 type URLKeyType = keyof typeof URL_LIST;
