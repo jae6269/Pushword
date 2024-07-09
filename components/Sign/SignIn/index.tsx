@@ -13,10 +13,7 @@ export default function SignIn() {
         <Image src={MainLogo} alt="메인 로고" priority fill={true} />
       </div>
 
-      <div className={cn('sign')}>
-        <h1 className={cn('title')}>로그인</h1>
-        <SignInButton />
-      </div>
+      <SignInButton />
     </div>
   );
 }

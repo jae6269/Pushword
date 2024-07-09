@@ -1,12 +1,11 @@
 .sign-in {
   display: flex;
-  width: 15.625rem;
+  width: 100%;
   height: 3.125rem;
   border-radius: .5rem;
   border: 1px solid $gray400;
   justify-content: center;
   align-items: center;
-
   gap: .9375rem;
 
   p {
