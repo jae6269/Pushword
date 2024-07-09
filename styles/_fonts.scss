@@ -70,14 +70,14 @@
   letter-spacing: -0.0437rem;
 }
 
-@mixin headline2-bold($color: black) {
+@mixin heading3-bold($color: black) {
   color: $color;
-  /* Headline 2/Bold */
-  font-size: 1.0625rem; //17
+  /* Heading 2/Medium */
+  font-size: 1.5rem; //24
   font-weight: 700;
-  line-height: 141.2%;
-  /* 24.004px */
-  letter-spacing: -0.0266rem;
+  line-height: 135.8%;
+  /* 38.024px */
+  letter-spacing: -0.0437rem;
 }
 
 @mixin heading4-medium($color: black) {
@@ -95,6 +95,16 @@
   /* Headline 2/Medium */
   font-size: 1.0625rem; //17
   font-weight: 500;
+  line-height: 141.2%;
+  /* 24.004px */
+  letter-spacing: -0.0266rem;
+}
+
+@mixin headline2-bold($color: black) {
+  color: $color;
+  /* Headline 2/Bold */
+  font-size: 1.0625rem; //17
+  font-weight: 700;
   line-height: 141.2%;
   /* 24.004px */
   letter-spacing: -0.0266rem;
