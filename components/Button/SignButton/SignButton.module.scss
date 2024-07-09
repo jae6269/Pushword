@@ -11,6 +11,10 @@
   p {
     @include headline2-bold
   }
+
+  &:active {
+    background-color: $gray400;
+  }
 }
 
 .sign-out {}

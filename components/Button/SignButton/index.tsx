@@ -24,9 +24,7 @@ export function SignInButton() {
         lastLogin: new Date(),
       });
 
-      alert('로그인,저장 완료');
       //확인 : 로그인 후 로직 추가
-      router.push('/');
     } catch (error) {
       console.log(error);
     }
