@@ -1,6 +1,5 @@
 .container {
-  width: 90%;
-  height: 70%;
+  //확인 : 프로필 내용 추가되면 높이 늘리기
   border-radius: .5rem;
   @include flex-row-center;
   gap: .625rem;
