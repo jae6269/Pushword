@@ -3,9 +3,31 @@ import Head from 'next/head';
 import useGetUser from '@/hooks/useGetUser';
 import BottomNavBar from '@/components/BottomNavBar';
 import '@/styles/reset.css';
+import { useEffect } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
   const user = useGetUser();
+  useEffect(() => {
+    const handleTouchStart = (event: any) => {
+      const targetElement = event.target || event.srcElement;
+      targetElement.classList.add('active');
+    };
+
+    const handleTouchEnd = (event: any) => {
+      const targetElement = event.target || event.srcElement;
+      targetElement.classList.remove('active');
+    };
+
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchend', handleTouchEnd);
+
+    // 클린업 함수: 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, []);
+
   return (
     <>
       <Head>
