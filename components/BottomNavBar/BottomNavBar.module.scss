@@ -26,7 +26,7 @@
       }
     }
 
-    &.active {
+    &:active {
       background-color: $yellow300;
     }
   }

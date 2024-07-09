@@ -12,7 +12,7 @@
     @include headline2-bold
   }
 
-  &.active {
+  &:active {
     background-color: $gray400;
   }
 }
@@ -24,7 +24,7 @@
   background-color: $logo-yellow2;
   @include heading4-medium($white);
 
-  &.active {
+  &:active {
     background-color: $logo-yellow1;
   }
 }
