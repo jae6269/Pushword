@@ -1,11 +1,15 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useState } from 'react';
 import useGetUser from '@/hooks/useGetUser';
 import BottomNavBar from '@/components/BottomNavBar';
+import { URLKeyType } from '@/types/types';
+
 import '@/styles/reset.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   const user = useGetUser();
+  const [menu, setMenu] = useState<URLKeyType>('home');
 
   return (
     <>
@@ -81,8 +85,8 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <div className="wrapper">
-        <Component {...pageProps} user={user} />
-        <BottomNavBar />
+        <Component {...pageProps} user={user} menu={menu} setMenu={setMenu} />
+        <BottomNavBar menu={menu} setMenu={setMenu} />
       </div>
     </>
   );

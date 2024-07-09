@@ -23,3 +23,12 @@
   width: 100%;
   height: calc(100vh - 3.75rem);
 }
+
+@mixin text-drag-disable {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}

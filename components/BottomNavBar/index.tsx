@@ -11,13 +11,15 @@ import { MdOutlineSubscriptions as ChannelIcon } from 'react-icons/md';
 
 import classNames from 'classnames/bind';
 import styles from './BottomNavBar.module.scss';
+import { MenuStateProp } from '@/types/types';
 
 type URLKeyType = keyof typeof URL_LIST;
 
 const cn = classNames.bind(styles);
 
-export default function BottomNavBar() {
-  const [menu, setMenu] = useState<URLKeyType>('home');
+interface BottomNavBarProps extends MenuStateProp {}
+
+export default function BottomNavBar({ menu, setMenu }: BottomNavBarProps) {
   const router = useRouter();
 
   const handleMenuChange = (newValue: URLKeyType) => {

@@ -15,6 +15,7 @@
 
     .tag {
       @include caption1-medium;
+      @include text-drag-disable;
     }
 
     &.selected {
@@ -23,6 +24,7 @@
 
       .tag {
         @include caption1-medium($white);
+        @include text-drag-disable;
       }
     }
 
