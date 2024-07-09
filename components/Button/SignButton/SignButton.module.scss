@@ -1,0 +1,30 @@
+.sign-in {
+  display: flex;
+  width: 100%;
+  height: 3.125rem;
+  border-radius: .5rem;
+  border: 1px solid $gray400;
+  justify-content: center;
+  align-items: center;
+  gap: .9375rem;
+
+  p {
+    @include headline2-bold
+  }
+
+  &:active {
+    background-color: $gray400;
+  }
+}
+
+.sign-out {
+  width: 90%;
+  height: 3.125rem;
+  border-radius: .5rem;
+  background-color: $logo-yellow2;
+  @include heading4-medium($white);
+
+  &:active {
+    background-color: $logo-yellow1;
+  }
+}

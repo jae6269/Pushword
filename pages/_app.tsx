@@ -1,29 +1,13 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { Roboto } from 'next/font/google';
-
-import '@/styles/globals.css';
 import useGetUser from '@/hooks/useGetUser';
 import BottomNavBar from '@/components/BottomNavBar';
-
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-const theme = createTheme({
-  typography: {
-    fontFamily: roboto.style.fontFamily,
-  },
-});
+import '@/styles/reset.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   const user = useGetUser();
   return (
-    <AppCacheProvider>
+    <>
       <Head>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>PushWord</title>
@@ -95,12 +79,10 @@ export default function App({ Component, pageProps }: AppProps) {
           href="/images/icons/apple/apple-icon-180x180.png"
         />
       </Head>
-      <ThemeProvider theme={theme}>
-        <div className="wrapper">
-          <Component {...pageProps} user={user} />
-          <BottomNavBar />
-        </div>
-      </ThemeProvider>
-    </AppCacheProvider>
+      <div className="wrapper">
+        <Component {...pageProps} user={user} />
+        <BottomNavBar />
+      </div>
+    </>
   );
 }

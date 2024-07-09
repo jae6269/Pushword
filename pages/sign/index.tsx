@@ -1,3 +1,13 @@
+import useGetUser from '@/hooks/useGetUser';
+
+import SignIn from '@/components/Sign/SignIn';
+import SignOut from '@/components/Sign/SignOut';
+
 export default function SignPage() {
-  return <div>로그인 페이지</div>;
+  const user = useGetUser();
+  if (user) {
+    return <SignOut user={user} />;
+  } else {
+    return <SignIn />;
+  }
 }

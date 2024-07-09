@@ -1,0 +1,8 @@
+.container {
+  @include container-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.375rem 3.125rem;
+  gap: 2.5rem;
+}
