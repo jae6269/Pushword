@@ -1,10 +1,10 @@
+import { User } from 'firebase/auth';
 import React from 'react';
 
 interface ProfileProps {
-  name: string;
-  photoURL: string;
+  user: User;
 }
 
-export default function Profile({ name, photoURL }: ProfileProps) {
+export default function Profile({ user }: ProfileProps) {
   return <div>프로필</div>;
 }

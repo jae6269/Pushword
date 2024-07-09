@@ -6,7 +6,7 @@ import SignOut from '@/components/Sign/SignOut';
 export default function SignPage() {
   const user = useGetUser();
   if (user) {
-    return <SignOut />;
+    return <SignOut user={user} />;
   } else {
     return <SignIn />;
   }
