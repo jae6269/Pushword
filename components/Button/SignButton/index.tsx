@@ -1,15 +1,18 @@
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { fireAuth, fireStore, provider } from '@/firebase/firebase';
 import { signInWithPopup, signOut } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
-import styles from './SignButton.module.scss';
 import classNames from 'classnames/bind';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import styles from './SignButton.module.scss';
+import { useMenuStore } from '@/store/store';
+import { URL_LIST } from '@/constants/url';
 const cn = classNames.bind(styles);
 
 export function SignInButton() {
   const router = useRouter();
+  const { setMenu } = useMenuStore();
   const handleLogin = async () => {
     try {
       const data = await signInWithPopup(fireAuth, provider);
@@ -24,7 +27,8 @@ export function SignInButton() {
         lastLogin: new Date(),
       });
 
-      //확인 : 로그인 후 로직 추가
+      setMenu('home');
+      router.push(URL_LIST.home);
     } catch (error) {
       console.log(error);
     }
