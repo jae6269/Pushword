@@ -1,5 +1,4 @@
 import { URL_LIST } from '@/constants/url';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import {
   RiHome4Line as HomeIcon,
@@ -8,17 +7,16 @@ import {
   RiAccountPinCircleLine as AccountIcon,
 } from 'react-icons/ri';
 import { MdOutlineSubscriptions as ChannelIcon } from 'react-icons/md';
+import { URLKeyType, useMenuStore } from '@/store/store';
 
 import classNames from 'classnames/bind';
 import styles from './BottomNavBar.module.scss';
 
-type URLKeyType = keyof typeof URL_LIST;
-
 const cn = classNames.bind(styles);
 
 export default function BottomNavBar() {
-  const [menu, setMenu] = useState<URLKeyType>('home');
   const router = useRouter();
+  const { menu, setMenu } = useMenuStore();
 
   const handleMenuChange = (newValue: URLKeyType) => {
     setMenu(newValue);

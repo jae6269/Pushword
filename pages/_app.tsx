@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import useGetUser from '@/hooks/useGetUser';
 import BottomNavBar from '@/components/BottomNavBar';
+
 import '@/styles/reset.css';
 
 export default function App({ Component, pageProps }: AppProps) {
