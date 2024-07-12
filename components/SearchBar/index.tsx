@@ -3,7 +3,6 @@ import SearchIcon from '../Icoon/SearchIcon';
 import classNames from 'classnames/bind';
 import styles from './SearchBar.module.scss';
 import { useState } from 'react';
-import { handleSearchChannel } from '@/apis/axios';
 import axios from 'axios';
 import { YOUTUBE_GET_BASE_URL } from '@/constants/url';
 
