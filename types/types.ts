@@ -6,43 +6,57 @@ export interface UserType {
 }
 
 // 유튜브 채널 타입 -----------
-export interface YoutubeChannelType {
+export interface ChannelSearchType {
   kind: string;
   etag: string;
-  id: YoutubeChannelIdType;
-  snippet: YoutubeChannelSnippetType;
+  nextPageToken: string;
+  regionCode: string;
+  pageInfo: PageInfoType;
+  items: ChannelType[];
 }
 
-export interface YoutubeChannelIdType {
+export interface PageInfoType {
+  totalResults: number;
+  resultsPerPage: number;
+}
+
+export interface ChannelType {
+  kind: string;
+  etag: string;
+  id: ChannelIdType;
+  snippet: ChannelSnippetType;
+}
+
+export interface ChannelIdType {
   kind: string;
   channelId: string;
 }
 
-export interface YoutubeChannelSnippetType {
+export interface ChannelSnippetType {
   publishedAt: string;
   channelId: string;
   title: string;
   description: string;
-  thumbnails: YoutubeChannelThumbnailsType;
+  thumbnails: ChannelThumbnailsType;
   channelTitle: string;
   liveBroadcastContent: string;
   publishTime: string;
 }
 
-export interface YoutubeChannelThumbnailsType {
-  default: YoutubeChannelDefaultImgType;
-  medium: YoutubeChannelMediumImgType;
-  high: YoutubeChannelHighImgType;
+export interface ChannelThumbnailsType {
+  default: ChannelDefaultImgType;
+  medium: ChannelMediumImgType;
+  high: ChannelHighImgType;
 }
 
-export interface YoutubeChannelDefaultImgType {
+export interface ChannelDefaultImgType {
   url: string;
 }
 
-export interface YoutubeChannelMediumImgType {
+export interface ChannelMediumImgType {
   url: string;
 }
 
-export interface YoutubeChannelHighImgType {
+export interface ChannelHighImgType {
   url: string;
 }
