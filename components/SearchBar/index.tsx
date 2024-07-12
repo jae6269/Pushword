@@ -1,5 +1,8 @@
+import Image from 'next/image';
+
 import classNames from 'classnames/bind';
 import styles from './SearchBar.module.scss';
+import { RiSearch2Line as SearchIcon } from 'react-icons/ri';
 
 const cn = classNames.bind(styles);
 

@@ -3,8 +3,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: .625rem;
+  position: relative;
 
   label {
-    @include headline2-bold
+    @include headline2-bold;
+    padding-left: .625rem;
   }
+
+  input {
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 1rem;
+    background-color: $gray300;
+    @include body2-medium;
+    padding: 0 1.25rem;
+    display: flex;
+  }
+
 }
