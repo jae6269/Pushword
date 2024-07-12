@@ -3,6 +3,9 @@ import SearchIcon from '../Icoon/SearchIcon';
 import classNames from 'classnames/bind';
 import styles from './SearchBar.module.scss';
 import { useState } from 'react';
+import { handleSearchChannel } from '@/apis/axios';
+import axios from 'axios';
+import { YOUTUBE_GET_BASE_URL } from '@/constants/url';
 
 const cn = classNames.bind(styles);
 
@@ -17,12 +20,26 @@ export default function SearchBar({ label, placeholder }: SearchBarProps) {
     setSearchValue(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!searchValue) {
       alert('검색어를 입력해주세요');
       return;
     }
-    alert(searchValue);
+    const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_DATA_API_KEY;
+    try {
+      const response = await axios.get(YOUTUBE_GET_BASE_URL.search, {
+        params: {
+          part: 'snippet',
+          q: searchValue,
+          type: 'channel',
+          key: YOUTUBE_API_KEY,
+          maxResults: 5,
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      alert('채널 검색 에러');
+    }
   };
   return (
     <div className={cn('container')}>

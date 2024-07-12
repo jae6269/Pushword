@@ -8,5 +8,6 @@ export const URL_LIST = {
 };
 
 export const YOUTUBE_GET_BASE_URL = {
+  search: 'https://www.googleapis.com/youtube/v3/search',
   channel: 'https://www.googleapis.com/youtube/v3/channels',
 };

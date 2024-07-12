@@ -1,0 +1,21 @@
+import { YOUTUBE_GET_BASE_URL } from '@/constants/url';
+import axios from 'axios';
+
+const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_DATA_API_KEY;
+
+export const handleSearchChannel = async (searchValue: string) => {
+  try {
+    const response = await axios.get(YOUTUBE_GET_BASE_URL.search, {
+      params: {
+        part: 'snippet',
+        q: searchValue,
+        type: 'channel',
+        key: YOUTUBE_API_KEY,
+        maxResults: 5,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    alert('채널 검색 에러');
+  }
+};
