@@ -27,6 +27,16 @@
     position: absolute;
     left: .9375rem;
     bottom: .625rem;
+  }
+
+  .submit-button {
+    @include body2-bold;
+    position: absolute;
+    bottom: .3125rem;
+    right: .9375rem;
+    padding: .3125rem .625rem;
+    background-color: $white;
+    border-radius: 1rem;
 
   }
 }
