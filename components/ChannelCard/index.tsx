@@ -15,10 +15,8 @@ export default function ChannelCard({ channelData }: ChannelCardProps) {
         alt="채널 썸네일 이미지"
         className={cn('thumbnail')}
       />
-      <div className={cn('contents')}>
-        <p>{channelData.snippet.channelTitle}</p>
-        <p>{channelData.snippet.description}</p>
-      </div>
+
+      <p>{channelData.snippet.channelTitle}</p>
     </div>
   );
 }
