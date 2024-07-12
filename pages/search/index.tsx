@@ -4,6 +4,8 @@ import SearchBar from '@/components/SearchBar';
 
 import classNames from 'classnames/bind';
 import styles from './SearchPage.module.scss';
+import { channel } from 'diagnostics_channel';
+import ChannelCard from '@/components/ChannelCard';
 
 const cn = classNames.bind(styles);
 
@@ -19,6 +21,16 @@ export default function Search() {
         placeholder={SEARCH_PLACEHOLDER}
         setChannels={setChannels}
       />
+      <div className={cn('channel-list')}>
+        <h2>채널 목록</h2>
+        {channels.length > 0 ? (
+          channels.map((channel) => (
+            <ChannelCard key={channel.id.channelId} channelData={channel} />
+          ))
+        ) : (
+          <p>채널을 검색해주세요.</p>
+        )}
+      </div>
     </div>
   );
 }

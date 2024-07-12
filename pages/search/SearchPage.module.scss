@@ -3,4 +3,16 @@
   padding: 13% 10%;
   display: flex;
   flex-direction: column;
+
+  gap: 1.25rem;
+
+  .channel-list {
+    display: flex;
+    flex-direction: column;
+    gap: .3125rem;
+
+    h2 {
+      @include headline2-bold;
+    }
+  }
 }
