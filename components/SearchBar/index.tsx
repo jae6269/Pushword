@@ -1,8 +1,7 @@
-import Image from 'next/image';
+import SearchIcon from '../Icoon/SearchIcon';
 
 import classNames from 'classnames/bind';
 import styles from './SearchBar.module.scss';
-import { RiSearch2Line as SearchIcon } from 'react-icons/ri';
 
 const cn = classNames.bind(styles);
 
@@ -15,6 +14,7 @@ export default function SearchBar({ label, placeholder }: SearchBarProps) {
     <div className={cn('container')}>
       <label htmlFor="search">{label}</label>
       <input type="text" placeholder={placeholder} id="search" />
+      <SearchIcon className={cn('search-icon')} />
     </div>
   );
 }
