@@ -1,17 +1,23 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import SearchIcon from '../Icoon/SearchIcon';
 
 import classNames from 'classnames/bind';
 import styles from './SearchBar.module.scss';
 import { handleSearchChannel } from '@/apis/apis';
+import { ChannelType } from '@/types/types';
 
 const cn = classNames.bind(styles);
 
 interface SearchBarProps {
   label: string;
   placeholder: string;
+  setChannels: Dispatch<SetStateAction<ChannelType[]>>;
 }
-export default function SearchBar({ label, placeholder }: SearchBarProps) {
+export default function SearchBar({
+  label,
+  placeholder,
+  setChannels,
+}: SearchBarProps) {
   const [searchValue, setSearchValue] = useState('');
 
   const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,6 +30,9 @@ export default function SearchBar({ label, placeholder }: SearchBarProps) {
       return;
     }
     const data = await handleSearchChannel(searchValue);
+    if (data) {
+      setChannels(data.items);
+    }
   };
   return (
     <div className={cn('container')}>
