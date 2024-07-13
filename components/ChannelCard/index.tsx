@@ -9,7 +9,7 @@ interface ChannelCardProps {
 }
 export default function ChannelCard({ channelData }: ChannelCardProps) {
   return (
-    <div className={cn('container')}>
+    <li className={cn('container')}>
       <img
         src={channelData.snippet.thumbnails.default.url}
         alt="채널 썸네일 이미지"
@@ -17,6 +17,6 @@ export default function ChannelCard({ channelData }: ChannelCardProps) {
       />
 
       <p>{channelData.snippet.channelTitle}</p>
-    </div>
+    </li>
   );
 }

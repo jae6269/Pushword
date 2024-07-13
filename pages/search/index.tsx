@@ -21,15 +21,17 @@ export default function Search() {
         placeholder={SEARCH_PLACEHOLDER}
         setChannels={setChannels}
       />
-      <div className={cn('channel-list')}>
-        <h2>채널 목록</h2>
-        {channels.length > 0 ? (
-          channels.map((channel) => (
-            <ChannelCard key={channel.id.channelId} channelData={channel} />
-          ))
-        ) : (
-          <p>채널을 검색해주세요.</p>
-        )}
+      <div className={cn('channel')}>
+        <h2 className={cn('title')}>채널 목록</h2>
+        <ul className={cn('list')}>
+          {channels.length > 0 ? (
+            channels.map((channel) => (
+              <ChannelCard key={channel.id.channelId} channelData={channel} />
+            ))
+          ) : (
+            <p>채널을 검색해주세요.</p>
+          )}
+        </ul>
       </div>
     </div>
   );

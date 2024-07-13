@@ -6,13 +6,19 @@
 
   gap: 1.25rem;
 
-  .channel-list {
+  .channel {
     display: flex;
     flex-direction: column;
-    gap: .3125rem;
+    gap: .625rem;
 
-    h2 {
+    .title {
       @include headline2-bold;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: .3125rem;
     }
   }
 }
