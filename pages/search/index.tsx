@@ -4,7 +4,6 @@ import SearchBar from '@/components/SearchBar';
 
 import classNames from 'classnames/bind';
 import styles from './SearchPage.module.scss';
-import { channel } from 'diagnostics_channel';
 import ChannelCard from '@/components/ChannelCard';
 
 const cn = classNames.bind(styles);
@@ -29,7 +28,7 @@ export default function Search() {
               <ChannelCard key={channel.id.channelId} channelData={channel} />
             ))
           ) : (
-            <p>채널을 검색해주세요.</p>
+            <p className={cn('pre-search')}>채널을 검색해주세요.</p>
           )}
         </ul>
       </div>

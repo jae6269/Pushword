@@ -9,6 +9,6 @@ export const channelSearchInstance = axios.create({
     part: 'snippet',
     type: 'channel',
     key: YOUTUBE_API_KEY,
-    maxResults: 5,
+    maxResults: 10,
   },
 });
