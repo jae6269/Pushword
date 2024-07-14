@@ -1,11 +1,11 @@
 import { URL_LIST } from '@/constants/url';
 import { useRouter } from 'next/router';
 import { URLKeyType, useMenuStore } from '@/store/store';
-import SubscriptionIcon from '../Icoon/SubscriptionIcon';
-import HomeIcon from '../Icoon/HomeIcon';
-import ManualIcon from '../Icoon/ManualIcon';
-import SearchIcon from '../Icoon/SearchIcon';
-import AccountIcon from '../Icoon/AccountIcon';
+import SubscriptionIcon from '../Icon/SubscriptionIcon';
+import HomeIcon from '../Icon/HomeIcon';
+import ManualIcon from '../Icon/ManualIcon';
+import SearchIcon from '../Icon/SearchIcon';
+import AccountIcon from '../Icon/AccountIcon';
 
 import classNames from 'classnames/bind';
 import styles from './BottomNavBar.module.scss';

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import SearchIcon from '../Icoon/SearchIcon';
+import SearchIcon from '../Icon/SearchIcon';
 
 import classNames from 'classnames/bind';
 import styles from './SearchBar.module.scss';

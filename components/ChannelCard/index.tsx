@@ -6,12 +6,8 @@ const cn = classNames.bind(styles);
 
 interface ChannelCardProps {
   channelData: ChannelType;
-  isRegistered?: boolean;
 }
-export default function ChannelCard({
-  channelData,
-  isRegistered,
-}: ChannelCardProps) {
+export default function ChannelCard({ channelData }: ChannelCardProps) {
   return (
     <li className={cn('container')}>
       <img
