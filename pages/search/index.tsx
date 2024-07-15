@@ -5,13 +5,18 @@ import SearchBar from '@/components/SearchBar';
 import classNames from 'classnames/bind';
 import styles from './SearchPage.module.scss';
 import ChannelCard from '@/components/ChannelCard';
+import { User } from 'firebase/auth';
 
 const cn = classNames.bind(styles);
 
 const SEARCH_LABEL = '채널 검색';
 const SEARCH_PLACEHOLDER = '채널명을 입력하세요.';
 
-export default function Search() {
+interface SearchProps {
+  user: User;
+}
+
+export default function Search({ user }: SearchProps) {
   const [channels, setChannels] = useState<ChannelType[]>([]);
   return (
     <div className={cn('container')}>
@@ -25,7 +30,11 @@ export default function Search() {
         <ul className={cn('list')}>
           {channels.length > 0 ? (
             channels.map((channel) => (
-              <ChannelCard key={channel.id.channelId} channelData={channel} />
+              <ChannelCard
+                key={channel.id.channelId}
+                channelData={channel}
+                user={user}
+              />
             ))
           ) : (
             <p className={cn('pre-search')}>채널을 검색해주세요.</p>
