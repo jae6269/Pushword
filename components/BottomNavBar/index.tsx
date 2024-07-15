@@ -1,13 +1,11 @@
 import { URL_LIST } from '@/constants/url';
 import { useRouter } from 'next/router';
-import {
-  RiHome4Line as HomeIcon,
-  RiBookReadLine as ManualIcon,
-  RiSearch2Line as SearchIcon,
-  RiAccountPinCircleLine as AccountIcon,
-} from 'react-icons/ri';
-import { MdOutlineSubscriptions as ChannelIcon } from 'react-icons/md';
 import { URLKeyType, useMenuStore } from '@/store/store';
+import SubscriptionIcon from '../Icon/SubscriptionIcon';
+import HomeIcon from '../Icon/HomeIcon';
+import ManualIcon from '../Icon/ManualIcon';
+import SearchIcon from '../Icon/SearchIcon';
+import AccountIcon from '../Icon/AccountIcon';
 
 import classNames from 'classnames/bind';
 import styles from './BottomNavBar.module.scss';
@@ -36,7 +34,7 @@ export default function BottomNavBar() {
         className={cn('menu', { selected: menu === 'channel' })}
         onClick={() => handleMenuChange('channel')}
       >
-        <ChannelIcon />
+        <SubscriptionIcon />
         <p className={cn('tag')}>채널</p>
       </div>
       <div
