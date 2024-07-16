@@ -18,6 +18,10 @@ interface SearchProps {
 
 export default function Search({ user }: SearchProps) {
   const [channels, setChannels] = useState<ChannelType[]>([]);
+  if (!user) {
+    return <div className={cn('container')}>로그인이 필요합니다.</div>;
+  }
+
   return (
     <div className={cn('container')}>
       <SearchBar
