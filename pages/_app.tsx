@@ -2,7 +2,9 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import useGetUser from '@/hooks/useGetUser';
 import BottomNavBar from '@/components/BottomNavBar';
+import { ToastContainer } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 import '@/styles/reset.css';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -82,6 +84,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <div className="wrapper">
+        <ToastContainer />
         <Component {...pageProps} user={user} />
         <BottomNavBar />
       </div>

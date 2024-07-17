@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 import styles from './SearchBar.module.scss';
 import { handleSearchChannel } from '@/apis/apis';
 import { ChannelType } from '@/types/types';
+import { toast } from 'react-toastify';
 
 const cn = classNames.bind(styles);
 
@@ -26,7 +27,7 @@ export default function SearchBar({
 
   const handleSubmit = async () => {
     if (!searchValue) {
-      alert('검색어를 입력해주세요');
+      toast.warning('검색어를 입력해주세요!');
       return;
     }
     const data = await handleSearchChannel(searchValue);
