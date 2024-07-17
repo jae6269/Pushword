@@ -84,7 +84,15 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <div className="wrapper">
-        <ToastContainer />
+        <ToastContainer
+          position="top-center"
+          autoClose={1500}
+          hideProgressBar={false}
+          closeOnClick={true}
+          rtl={false}
+          pauseOnHover={false}
+          pauseOnFocusLoss={false}
+        />
         <Component {...pageProps} user={user} />
         <BottomNavBar />
       </div>
