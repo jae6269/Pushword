@@ -6,12 +6,24 @@ import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import '@/styles/reset.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0, // 재시도 횟수
+      staleTime: 1 * 60 * 1000, // 1분
+      gcTime: 5 * 60 * 1000, // 5분
+      throwOnError: true, // 에러 발생 시 컴포넌트에 에러를 전파
+    },
+  },
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   const user = useGetUser();
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Head>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>PushWord</title>
@@ -96,6 +108,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} user={user} />
         <BottomNavBar />
       </div>
-    </>
+    </QueryClientProvider>
   );
 }
