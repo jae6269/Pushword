@@ -11,6 +11,7 @@ import ErrorFallback from '@/components/ErrorFallback';
 
 import 'react-toastify/dist/ReactToastify.css';
 import '@/styles/reset.css';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false} />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Head>
           <meta name="viewport" content="width=device-width,initial-scale=1" />
