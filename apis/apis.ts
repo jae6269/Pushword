@@ -1,7 +1,7 @@
 import { ChannelSearchType } from '@/types/types';
 import { channelSearchInstance } from './axios';
 
-export const handleSearchChannel = async (
+export const searchChannels = async (
   searchValue: string
 ): Promise<ChannelSearchType | null> => {
   try {
@@ -16,3 +16,4 @@ export const handleSearchChannel = async (
     return null;
   }
 };
+``;
