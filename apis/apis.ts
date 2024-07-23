@@ -16,4 +16,3 @@ export const searchChannels = async (
     return null;
   }
 };
-``;
