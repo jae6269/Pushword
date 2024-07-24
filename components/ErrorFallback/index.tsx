@@ -10,5 +10,5 @@ export default function ErrorFallback({
     resetErrorBoundary();
   };
 
-  return <div></div>;
+  return <div>에러</div>;
 }
